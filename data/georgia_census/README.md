@@ -11,28 +11,26 @@ across **11 regions** of Georgia, sourced from the
 ## Dataset Summary
 
 - **Total municipalities:** 64
-- **Complete municipalities (all 6 components):** 0
-- **Total Excel files:** 64
 
 ## Regions
 
-| Region | Municipalities | Complete |
-|--------|---------------|----------|
-| adjara | 6 | 0 |
-| guria | 3 | 0 |
-| imereti | 12 | 0 |
-| javaxeti | 6 | 0 |
-| kakheti | 8 | 0 |
-| mcxeta-mtianeti | 4 | 0 |
-| qvemo-qartli | 7 | 0 |
-| racha | 4 | 0 |
-| samegrelo | 9 | 0 |
-| shida-qartli | 4 | 0 |
-| tbilisi | 1 | 0 |
+| Region | Municipalities |
+|--------|---------------|
+| adjara | 6 |
+| guria | 3 |
+| imereti | 12 |
+| javaxeti | 6 |
+| kakheti | 8 |
+| mcxeta-mtianeti | 4 |
+| qvemo-qartli | 7 |
+| racha | 4 |
+| samegrelo | 9 |
+| shida-qartli | 4 |
+| tbilisi | 1 |
 
 ## Vulnerability Components
 
-Each municipality has up to 6 vulnerability indicator files:
+Each municipality has 6 vulnerability indicator files:
 1. **population_total.xlsx** - Total population by year (denominator for rate calculations)
 2. **healthcare_staff.xlsx** - Healthcare staff per 1000 population
 3. **education_graduates.xlsx** - Secondary school graduates per 1000
@@ -68,35 +66,7 @@ georgia_census/
 └── tbilisi/
 ```
 
-## Loading Data in R
-
-### Option 1: Load from local clone
-
-```r
-library(tidyverse)
-library(readxl)
-
-# Set path to your local clone
-data_path <- "path/to/GVecVuln/data/georgia_census"
-
-# Load metadata
-municipalities <- read_csv(file.path(data_path, "municipalities.csv"))
-
-# Load all data for one municipality
-load_municipality <- function(region, slug, data_path) {
-    muni_path <- file.path(data_path, region, slug)
-    files     <- list.files(muni_path, pattern = "\\.xlsx$", full.names = TRUE)
-    
-    files %>%
-        set_names(str_remove(basename(.), "\\.xlsx$")) %>%
-        map(read_excel)
-}
-
-# Example: Load Tbilisi data
-tbilisi <- load_municipality("tbilisi", "tbilisi", data_path)
-```
-
-### Option 2: Load directly from GitHub
+### Load data directly from GitHub into R
 
 ```r
 source("https://raw.githubusercontent.com/IanPsheaSmith/GVecVuln/main/data/georgia_census/load_from_github.R")
@@ -115,9 +85,8 @@ Regional Statistics Portal: https://regions.geostat.ge/
 
 ## Notes
 
-- **Occupied territories** (Abkhazia and South Ossetia) are not included as data is unavailable
+- **Abkhazia** and **South Ossetia** are not included as data is unavailable
 - **Tbilisi** is structured as a single municipality (capital city)
-- Some municipalities may have fewer than 6 components if data was unavailable on source
 - File naming uses Georgian transliteration (e.g., "qvemo-qartli" for "Kvemo Kartli")
 
 ## Citation
