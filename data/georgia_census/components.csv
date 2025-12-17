@@ -1,0 +1,7 @@
+component,description,vulnerability_dimension
+population_total,Total population by year,Denominator for rate calculations
+healthcare_staff,Healthcare staff per 1000 population,Healthcare access vulnerability
+education_graduates,Secondary school graduates per 1000,Educational attainment
+age_dependency,Age dependency ratios,Demographic vulnerability
+disability_prevalence,Registered disability prevalence,Health vulnerability
+average_wages,Average monthly remuneration,Economic vulnerability

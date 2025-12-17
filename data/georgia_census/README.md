@@ -2,24 +2,32 @@
 
 ## Overview
 
-This dataset contains socioeconomic vulnerability indicators for **8 municipalities** 
-across **3 regions** of Georgia, sourced from the 
+This dataset contains socioeconomic vulnerability indicators for **64 municipalities** 
+across **11 regions** of Georgia, sourced from the 
 [National Statistics Office of Georgia (Geostat)](https://regions.geostat.ge/).
 
 **Data downloaded:** 2025-12-17
 
 ## Dataset Summary
 
-- **Total municipalities:** 8
+- **Total municipalities:** 64
 - **Complete municipalities (all 6 components):** 0
-- **Total Excel files:** 0
+- **Total Excel files:** 64
 
 ## Regions
 
 | Region | Municipalities | Complete |
 |--------|---------------|----------|
+| adjara | 6 | 0 |
+| guria | 3 | 0 |
+| imereti | 12 | 0 |
 | javaxeti | 6 | 0 |
-| racha | 1 | 0 |
+| kakheti | 8 | 0 |
+| mcxeta-mtianeti | 4 | 0 |
+| qvemo-qartli | 7 | 0 |
+| racha | 4 | 0 |
+| samegrelo | 9 | 0 |
+| shida-qartli | 4 | 0 |
 | tbilisi | 1 | 0 |
 
 ## Vulnerability Components
