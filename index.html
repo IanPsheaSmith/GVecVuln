@@ -250,6 +250,36 @@
             line-height: 1.5;
         }
 
+        /* ── Static figure cards ── */
+        .figure-card {
+            margin: 1.8rem 0;
+            background: rgba(10, 14, 12, 0.6);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(45, 106, 79, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .figure-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 0.9rem;
+            background: #141a17;
+        }
+
+        .figure-card figcaption {
+            color: #c0bdb5;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            padding: 0 0.3rem;
+        }
+
+        .figure-card figcaption strong {
+            color: #c9a96e;
+        }
+
         /* ── Buttons ── */
         .btn {
             display: inline-block;
@@ -348,8 +378,8 @@
 
     <header>
         <h1>Multi-Vector Risk in Georgia</h1>
-        <p class="subtitle">Species distribution modelling, social vulnerability and risk assessment</p>
-        <p class="author-line">Pshea-Smith <em>et al.</em> &mdash; University of Florida</p>
+        <p class="subtitle">Species distribution modelling, social vulnerability and integrated risk assessment</p>
+        <p class="author-line">Pshea&#8209;Smith <em>et al.</em> &mdash; University of Florida, WRAIR&#8209;EME and USAMRIID</p>
     </header>
 
     <div class="container">
@@ -358,13 +388,15 @@
         <div class="content-box">
             <h2>Project Overview</h2>
             <p>
-                This project models the distributions of 16 mosquito and tick species of public health relevance in the country of Georgia (Caucasus region).
-                Species-level suitability predictions are integrated into weighted composite disease exposure indices for eight pathogen&ndash;vector groups, then combined with a social vulnerability index to produce municipality-level risk assessments following an INFORM-parallel framework.
+                This project models the habitat suitability of sixteen mosquito and tick species of public health relevance across the Republic of Georgia (Caucasus region). Species-level predictions are combined into weighted exposure indices for eight pathogen&ndash;vector groups, then integrated with a census-derived social vulnerability index to produce municipality-level risk estimates following an INFORM-parallel framework.
+            </p>
+            <p>
+                Outputs are summarised at the scale of Georgia's sixty-four administrative municipalities (<em>rayonii</em>), with interactive maps and supporting data hosted alongside this page.
             </p>
 
             <div class="highlight-box">
                 <strong>Key finding:</strong>
-                <span class="placeholder">[Placeholder &mdash; insert key summary finding once results are finalised, e.g. &ldquo;Southeastern municipalities including Gori, Sagarejo, and Axalcixe had the highest overall risk index values at baseline, driven by broad tick-borne pathogen vector suitability and elevated social vulnerability.&rdquo;]</span>
+                Risk was highest across the southeastern and western lowlands, with Sagarejo, Qeda and Dedofliswyaro ranking as the top three at-risk municipalities. Tbilisi, despite showing the highest vector-driven hazard score in the country, recorded the third-lowest composite risk owing to its low social vulnerability &mdash; illustrating the value of jointly interpreting hazard and vulnerability rather than either component alone.
             </div>
         </div>
 
@@ -376,42 +408,43 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">16</span>
-                    <span class="stat-label">mosquito and tick species modelled across 100 pseudo-absence iterations</span>
+                    <span class="stat-label">mosquito and tick species modelled across 100 pseudo-absence iterations (BRTs) or 3 evaluation runs (ESMs)</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">0.84&ndash;1.00</span>
-                    <span class="stat-label">mean AUC range across species, indicating high model discrimination</span>
+                    <span class="stat-number">0.64&ndash;1.00</span>
+                    <span class="stat-label">cross-validated AUC range across species; all models performed better than random</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">8</span>
-                    <span class="stat-label">pathogen&ndash;vector disease groups assessed, from Lyme borreliosis to emerging arboviruses</span>
+                    <span class="stat-label">pathogen&ndash;vector groups assessed, from Lyme borreliosis to emerging arboviruses</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">~69</span>
-                    <span class="stat-label">municipalities evaluated for risk, excluding regions with no census data</span>
+                    <span class="stat-number">64</span>
+                    <span class="stat-label">municipalities (<em>rayonii</em>) evaluated for integrated risk, excluding autonomous regions with no census data</span>
                 </div>
             </div>
 
             <h3>Risk index</h3>
             <p>
-                Risk was highest in the southeastern lowlands, with Gori (4.71&thinsp;&plusmn;&thinsp;0.23), Sagarejo (4.29&thinsp;&plusmn;&thinsp;0.59), and Axalcixe (4.11&thinsp;&plusmn;&thinsp;0.15) ranking as the top three municipalities at baseline.
-                Tbilisi had the lowest social vulnerability in the country, resulting in a low composite risk score (0.71&thinsp;&plusmn;&thinsp;0.05) despite moderate hazard.
-            </p>
-            <p class="placeholder">
-                [Placeholder &mdash; update with final warming-level results, population exposure estimates, and seasonal shift summaries when available.]
+                Risk was concentrated across the southeastern and western sections of the country. The three highest-risk municipalities at baseline were Sagarejo (risk&thinsp;=&thinsp;0.43; hazard&thinsp;=&thinsp;0.37, SVI&thinsp;=&thinsp;0.51), Qeda (0.43; 0.26, 0.70) and Dedofliswyaro (0.42; 0.31, 0.57). The lowest risk values were recorded in Yazbegi and Kutaisi (both 0.10), driven by low hazard and low social vulnerability respectively. Tbilisi recorded the third-lowest risk (0.12) despite showing the highest hazard score nationally (0.86), owing to its low social vulnerability (0.01).
             </p>
 
-            <h3>Phenological shifts under warming</h3>
+            <h3>Hazard indices</h3>
             <p>
-                Spotted fever rickettsioses vectors exhibited the broadest baseline surveillance window (March&ndash;November), while emerging <em>Aedes</em>-borne virus vectors showed the most pronounced phenological shifts, with season onset advancing by approximately 2.8 months under +3&thinsp;&deg;C of warming.
+                Across the eight pathogen&ndash;vector groups, municipality-level hazard standard deviations ranged narrowly from 1.16 (<em>Plasmodium</em> vectors) to 1.56 (<em>Aedes</em>-borne viruses). Mean hazard was highest for tick-borne encephalitis virus vectors (3.01, SD&thinsp;=&thinsp;1.27) and lowest for Crimean-Congo haemorrhagic fever virus vectors (2.13, SD&thinsp;=&thinsp;1.44).
+            </p>
+
+            <h3>Social vulnerability</h3>
+            <p>
+                The social vulnerability index (SVI) had a mean of &minus;0.02 (SD&thinsp;=&thinsp;0.44) across municipalities. Tbilisi showed the lowest social vulnerability (&minus;1.19), followed by Kutaisi (&minus;1.13) and Batumi (&minus;0.99). The highest SVI values occurred in Dusheti (1.48), Shuakhevi (1.05) and Khulo (0.69), reflecting relatively rural, less-served populations.
             </p>
         </div>
 
-        <!-- ── Disease Groups ── -->
+        <!-- ── Pathogen–Vector Groups ── -->
         <div class="content-box">
             <h2>Pathogen&ndash;Vector Groups</h2>
             <p>
-                Sixteen species were assigned to eight disease groups based on published vector competence evidence, regional seroprevalence data, and molecular detection rates. Contribution weights were derived from the literature and tested via sensitivity analysis.
+                The sixteen modelled species were assigned to eight disease groups based on published vector competence evidence, regional seroprevalence data and molecular detection rates. Contribution weights were derived from the literature and tested via sensitivity analysis, with minimal sensitivity to plausible weight variation.
             </p>
 
             <table class="disease-table">
@@ -424,19 +457,24 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Emerging <em>Aedes</em>-borne Viruses</td>
+                        <td><em>Aedes</em>-borne Viruses</td>
                         <td><span class="taxa-tag taxa-mosquito">Mosquito</span></td>
-                        <td><em>Ae.&nbsp;albopictus</em>, <em>Ae.&nbsp;vexans</em>, <em>Ae.&nbsp;caspius</em></td>
+                        <td><em>Ae.&nbsp;aegypti</em>, <em>Ae.&nbsp;albopictus</em>, <em>Ae.&nbsp;vexans</em></td>
                     </tr>
                     <tr>
                         <td>West Nile Virus Complex</td>
                         <td><span class="taxa-tag taxa-mosquito">Mosquito</span></td>
-                        <td><em>Cx.&nbsp;pipiens</em>, <em>Cx.&nbsp;theileri</em>, <em>Ae.&nbsp;vexans</em></td>
+                        <td><em>Cx.&nbsp;pipiens</em>, <em>Cx.&nbsp;theileri</em>, <em>Cx.&nbsp;tritaeniorhynchus</em>, <em>Ae.&nbsp;vexans</em></td>
+                    </tr>
+                    <tr>
+                        <td><em>Plasmodium</em> (Malaria)</td>
+                        <td><span class="taxa-tag taxa-mosquito">Mosquito</span></td>
+                        <td><em>An.&nbsp;sacharovi</em>, <em>An.&nbsp;maculipennis</em>, <em>An.&nbsp;plumbeus</em></td>
                     </tr>
                     <tr>
                         <td>Tick-borne Encephalitis</td>
                         <td><span class="taxa-tag taxa-tick">Tick</span></td>
-                        <td><em>I.&nbsp;ricinus</em>, <em>D.&nbsp;reticulatus</em>, <em>Ha.&nbsp;inermis</em></td>
+                        <td><em>I.&nbsp;ricinus</em>, <em>D.&nbsp;reticulatus</em>, <em>Ha.&nbsp;inermis</em>, <em>D.&nbsp;marginatus</em></td>
                     </tr>
                     <tr>
                         <td>Lyme Borreliosis</td>
@@ -446,22 +484,17 @@
                     <tr>
                         <td>Spotted Fever Rickettsioses</td>
                         <td><span class="taxa-tag taxa-tick">Tick</span></td>
-                        <td><em>D.&nbsp;marginatus</em>, <em>D.&nbsp;reticulatus</em>, <em>Rh.&nbsp;sanguineus</em>, <em>Hy.&nbsp;marginatum</em></td>
+                        <td><em>Rh.&nbsp;sanguineus</em>, <em>D.&nbsp;marginatus</em>, <em>D.&nbsp;reticulatus</em>, <em>Hy.&nbsp;marginatum</em>, <em>Hy.&nbsp;aegyptium</em></td>
                     </tr>
                     <tr>
                         <td>Crimean-Congo Haemorrhagic Fever</td>
                         <td><span class="taxa-tag taxa-tick">Tick</span></td>
-                        <td><em>Hy.&nbsp;marginatum</em></td>
+                        <td><em>Hy.&nbsp;marginatum</em>, <em>Hy.&nbsp;aegyptium</em></td>
                     </tr>
                     <tr>
                         <td>Tularaemia</td>
                         <td><span class="taxa-tag taxa-tick">Tick</span></td>
-                        <td><em>D.&nbsp;marginatus</em>, <em>D.&nbsp;reticulatus</em>, <em>I.&nbsp;ricinus</em></td>
-                    </tr>
-                    <tr>
-                        <td class="placeholder">[Malaria &mdash; if included]</td>
-                        <td><span class="taxa-tag taxa-mosquito">Mosquito</span></td>
-                        <td class="placeholder"><em>[An.&nbsp;claviger, etc.]</em></td>
+                        <td><em>D.&nbsp;marginatus</em>, <em>I.&nbsp;ricinus</em>, <em>D.&nbsp;reticulatus</em></td>
                     </tr>
                 </tbody>
             </table>
@@ -471,15 +504,13 @@
         <div class="content-box">
             <h2>Modelling Approach</h2>
             <p>
-                Species distribution models were constructed using a three-tier framework scaled by sample size: standard boosted regression trees (BRTs) for species with &gt;100 presence records, conservatively tuned BRTs for species with 50&ndash;100 records (tree complexity&thinsp;=&thinsp;1, 5-fold CV, bag fraction&thinsp;=&thinsp;0.5), and ensemble of small models (ESMs) via <code>ecospat</code>/<code>biomod2</code> for rare species with &lt;50 records.
-                Each BRT tier used 100 pseudo-absence iterations with month-matched covariate extraction via <code>dynamicSDM</code>.
+                Species distribution models were constructed using a sample-size-scaled framework. Species with sufficient presence records were modelled using boosted regression trees (BRTs) via <code>dismo::gbm.step</code>, with 100 pseudo-absence iterations per species and month-matched covariate extraction via <code>dynamicSDM</code>. Species with fewer than fifty unique presence records were modelled using ensembles of small models (ESMs) via <code>ecospat</code> and <code>biomod2</code>, following Breiner and colleagues (2015, 2018).
             </p>
             <p>
-                Baseline predictions used CHELSA climatologies. Future projections were computed across three CMIP6 global climate models (GFDL-ESM4, MPI-ESM1, UKESM1) using a delta-change methodology, under SSP3-7.0 and SSP5-8.5 pathways summarised at global warming levels of +1.5&thinsp;&deg;C, +2&thinsp;&deg;C, and +3&thinsp;&deg;C.
+                Predictor sets were taxon-specific: mosquito models drew on bioclimatic, topographic, land-cover and wind-related covariates; tick models substituted soil variables for wind speed. Final predictor lists were selected by variance inflation factor screening at the taxon level to support cross-species comparability.
             </p>
             <p>
-                Disease exposure indices were constructed using a continuous suitability approach (<code>E&thinsp;=&thinsp;&Sigma;&thinsp;w<sub>i</sub>&thinsp;&times;&thinsp;suit<sub>i</sub></code>) with uncertainty propagated via 1,000 Monte Carlo iterations.
-                Social vulnerability was computed from six Georgian census indicators and integrated with the hazard score via an epsilon-adjusted geometric mean.
+                Disease exposure indices were constructed using continuous habitat suitability surfaces (<code>E&thinsp;=&thinsp;&Sigma;&thinsp;w<sub>i</sub>&thinsp;&times;&thinsp;suit<sub>i</sub></code>), with uncertainty propagated via 1,000 Monte Carlo iterations sampled from truncated normal distributions on the species-level weights. Social vulnerability was computed from six Georgian census indicators. Hazard and vulnerability components were combined using an epsilon-adjusted geometric mean formulation to prevent zero values on one axis from nullifying signal on the other.
             </p>
         </div>
 
@@ -487,86 +518,97 @@
         <div class="content-box">
             <h2>Data Sources</h2>
             <ul>
-                <li><strong>Vector occurrences:</strong> VectorMap database (accessed March 2025) and bespoke field collections</li>
-                <li><strong>Climate data:</strong> CHELSA v2.1 bioclimatic variables (baseline); CHELSA-CMIP6 projections (future)</li>
-                <li><strong>Social vulnerability:</strong> Georgian National Statistics Office census data (<a href="https://regions.geostat.ge" target="_blank">regions.geostat.ge</a>)</li>
-                <li><strong>Administrative boundaries:</strong> <code>geodata::gadm()</code> ADM2 for Georgia</li>
-                <li><strong>Spatial analysis tools:</strong> R v4.5.1 with <code>terra</code>, <code>sf</code>, <code>exactextractr</code>, <code>dismo</code>, <code>ecospat</code>, <code>biomod2</code></li>
+                <li><strong>Vector occurrences:</strong> VectorMap, the Global Biodiversity Information Facility (GBIF) and a previously published regional tick dataset. All records were filtered to unique post-2000 entries.</li>
+                <li><strong>Climate data:</strong> CHELSA v2.1 bioclimatic variables.</li>
+                <li><strong>Soil data:</strong> SoilGrids (tick covariates only).</li>
+                <li><strong>Land cover:</strong> ESA WorldCover (categorical, handled as a factor).</li>
+                <li><strong>Social vulnerability:</strong> Georgian National Statistics Office census indicators (<a href="https://regions.geostat.ge" target="_blank">regions.geostat.ge</a>), aggregated to six municipality-level composite inputs.</li>
+                <li><strong>Administrative boundaries:</strong> GeoJSON municipal boundaries distributed by the Georgian National Statistics Office (64-municipality taxonomy).</li>
+                <li><strong>Analytical stack:</strong> R 4.5.1 with <code>terra</code>, <code>sf</code>, <code>exactextractr</code>, <code>dismo</code>, <code>gbm</code>, <code>ecospat</code>, <code>biomod2</code>, <code>dynamicSDM</code>, <code>truncnorm</code> and <code>tidyterra</code>.</li>
             </ul>
+        </div>
+
+        <!-- ── Static Figures ── -->
+        <div class="content-box">
+            <h2>Figures</h2>
+            <p>
+                Publication figures are included below. High-resolution TIFF versions are available in the <a href="https://github.com/IanPsheaSmith/GVecVuln/tree/main/Figures" target="_blank"><code>Figures/</code></a> folder of the repository.
+            </p>
+
+            <figure class="figure-card">
+                <a href="Figures/Fig2.png" target="_blank">
+                    <img src="Figures/Fig2.png" alt="Species distribution maps for the sixteen modelled vector species">
+                </a>
+                <figcaption>
+                    <strong>Figure 2.</strong> Distribution maps of the sixteen modelled vector species. Locations in yellow and green indicate a higher probability of presence; blue indicates lower probability. Municipality (<em>rayonii</em>) borders are shown in white, and autonomous regions with no data in grey. Mosquitoes are shown in panels A&ndash;I and ticks in panels J&ndash;P.
+                </figcaption>
+            </figure>
+
+            <figure class="figure-card">
+                <a href="Figures/Fig4.png" target="_blank">
+                    <img src="Figures/Fig4.png" alt="Hazard index maps for the eight pathogen-vector groups and the overall vector-hazard index">
+                </a>
+                <figcaption>
+                    <strong>Figure 4.</strong> Individual hazard-index maps for the eight pathogen&ndash;vector groups and the overall vector-hazard index (bottom panel). Higher values in yellow and light green; lower values in blue. The hazard index is calculated from the suitabilities of contributing vectors weighted by population. Tbilisi is labelled on the overall panel for reference.
+                </figcaption>
+            </figure>
         </div>
 
         <!-- ── Interactive Maps ── -->
         <div class="content-box">
             <h2>Interactive Maps</h2>
             <p>
-                The maps below are hosted as HTML Leaflet widgets with GeoJSON overlays. They support zooming, panning, layer controls, and dropdown scenario selection.
-                All HTMLs are also downloadable from the repository.
+                The three maps below are hosted as standalone HTML Leaflet widgets with GeoJSON overlays, supporting zooming, panning, layer controls and dropdown selection. They correspond to Figures 1, 3 and 5 in the manuscript, and can also be downloaded directly from the repository.
             </p>
 
             <div class="map-grid">
                 <div class="map-card">
-                    <h4>Species suitability predictions</h4>
+                    <h4>Country context &amp; vector occurrences</h4>
                     <p>
-                        Explore baseline and warming-scenario predictions for all 16 modelled vector species, with dropdown selection by species and scenario.
+                        Interactive country map showing the locations of all vector occurrence records used in the species distribution models.
                     </p>
-                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
-                </div>
-
-                <div class="map-card">
-                    <h4>Disease exposure indices</h4>
-                    <p>
-                        Municipality-level composite exposure indices for each of the eight pathogen&ndash;vector groups under baseline and warming conditions.
-                    </p>
-                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
+                    <a href="Figures/Fig1.html" class="btn" target="_blank">View Figure 1</a>
                 </div>
 
                 <div class="map-card">
                     <h4>Social vulnerability</h4>
                     <p>
-                        Census-derived social vulnerability index scores by municipality, highlighting geographic patterns in healthcare capacity and population structure.
+                        Municipality-level social vulnerability index scores, with dropdown toggles for each of the six underlying census indicators.
                     </p>
-                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
+                    <a href="Figures/Fig3.html" class="btn" target="_blank">View Figure 3</a>
                 </div>
 
                 <div class="map-card">
-                    <h4>Risk index</h4>
+                    <h4>Integrated risk index</h4>
                     <p>
-                        Integrated INFORM-parallel risk representation combining vector-driven disease hazard with social vulnerability at the municipality level.
+                        Final INFORM-parallel risk surface combining vector-driven hazard with social vulnerability at the municipality level.
                     </p>
-                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
+                    <a href="Figures/Fig5.html" class="btn" target="_blank">View Figure 5</a>
                 </div>
             </div>
         </div>
 
-        <!-- ── Supplementary Files ── -->
+        <!-- ── Data & Code ── -->
         <div class="content-box">
-            <h2>Supplementary Files</h2>
+            <h2>Data &amp; Code</h2>
             <p>
-                Complete model outputs, raw data, and supplementary analyses are available via the linked repository and as supplementary files accompanying the manuscript.
+                All analytical code and municipality-level data are hosted in the <a href="https://github.com/IanPsheaSmith/GVecVuln/tree/main/Data_and_Code" target="_blank"><code>Data_and_Code/</code></a> folder of the repository. The full pipeline &mdash; covariate preparation, BRT and ESM fitting, Monte Carlo risk aggregation and figure generation &mdash; is contained in a single R Markdown document for reproducibility.
             </p>
             <ul>
-                <li><strong>Supplemental File 1:</strong> Cleaned vector occurrence data</li>
-                <li><strong>Supplemental File 3:</strong> Social vulnerability index components and composite scores</li>
-                <li><strong>Supplemental File 5:</strong> Species-specific maxSSS thresholds</li>
-                <li><strong>Supplemental File 8:</strong> Individual model fit statistics (1,600 models)</li>
-                <li><strong>Supplemental File 9:</strong> Municipality-level risk index values across all scenarios</li>
+                <li><strong><a href="https://github.com/IanPsheaSmith/GVecVuln/blob/main/Data_and_Code/RCode.Rmd" target="_blank">RCode.Rmd</a></strong> &mdash; complete analytical pipeline (R Markdown).</li>
+                <li><strong><a href="https://github.com/IanPsheaSmith/GVecVuln/blob/main/Data_and_Code/Species_Occurrence_Points.csv" target="_blank">Species_Occurrence_Points.csv</a></strong> &mdash; cleaned, deduplicated occurrence records for the sixteen modelled species.</li>
+                <li><strong><a href="https://github.com/IanPsheaSmith/GVecVuln/blob/main/Data_and_Code/Municipality_Data.csv" target="_blank">Municipality_Data.csv</a></strong> &mdash; municipality-level census indicators and composite social vulnerability inputs.</li>
             </ul>
-            <p class="placeholder">[Placeholder &mdash; add repository link and DOI once finalised.]</p>
         </div>
 
         <!-- ── Public Health ── -->
         <div class="content-box">
             <h2>Public Health Implications</h2>
             <p>
-                Multi-taxon descriptions of vector ecology remain uncommon despite vector control being routinely performed across taxa by the same public health personnel.
-                Integrating mosquito and tick distributions with social vulnerability data provides a more holistic basis for resource allocation than single-species or single-pathogen assessments alone.
+                Multi-taxon descriptions of vector ecology remain uncommon, despite vector surveillance and control routinely being performed across taxa by the same public health personnel. Integrating mosquito and tick distributions with social vulnerability data provides a more holistic basis for resource allocation than single-species or single-pathogen assessments alone.
             </p>
             <p>
-                The projected expansion of suitable habitat under warming, combined with phenological shifts that may extend transmission windows by several months for some disease groups, underscores the importance of forward-looking surveillance planning.
-                These outputs provide spatially explicit, municipality-level estimates designed to support prioritisation while transparently communicating uncertainty.
-            </p>
-            <p class="placeholder">
-                [Placeholder &mdash; refine with final discussion points once the manuscript is complete.]
+                The contrast between Tbilisi &mdash; which recorded the highest hazard but lowest social vulnerability in the country &mdash; and municipalities such as Qeda, where moderate hazard combines with high vulnerability to yield top-tier risk scores, highlights the importance of considering both vector ecology and population-level context when prioritising surveillance and control resources. These outputs provide spatially explicit, municipality-level estimates designed to support prioritisation while transparently communicating the uncertainty associated with data-sparse settings.
             </p>
         </div>
 
@@ -574,8 +616,8 @@
 
     <footer>
         <p>Multi-vector disease risk modelling in the Republic of Georgia</p>
-        <p>Contact: <em>ianpsheasmith@ufl.edu</em></p>
-        <p>Hosted via GitHub Pages &mdash; <span class="placeholder">[repository link TBD]</span></p>
+        <p>Pshea&#8209;Smith <em>et al.</em> &mdash; manuscript in preparation</p>
+        <p>Repository: <a href="https://github.com/IanPsheaSmith/GVecVuln" target="_blank">github.com/IanPsheaSmith/GVecVuln</a> &nbsp;&middot;&nbsp; Contact: <em>ianpsheasmith@ufl.edu</em></p>
     </footer>
 
 </body>
