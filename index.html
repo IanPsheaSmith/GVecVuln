@@ -1,333 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aedes aegypti Suitability in Haiti Under Climate Change</title>
+    <title>Multi-Vector Risk in Georgia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #e8e8e8;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a0b2e 100%);
+            font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #e0ddd5;
+            background: #0e1210;
             min-height: 100vh;
         }
+
+        /* ── Header ── */
         header {
-            background: linear-gradient(135deg, #000004 0%, #3b0f70 50%, #b12a90 75%, #fb9062 100%);
+            background:
+                linear-gradient(
+                    160deg,
+                    #0a100d 0%,
+                    #1b3a2a 35%,
+                    #2d6a4f 60%,
+                    #8b6f47 85%,
+                    #c9a96e 100%
+                );
             color: white;
-            padding: 3.5rem 2rem;
+            padding: 4.5rem 2rem 3.5rem;
             text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
         }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(45, 106, 79, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(201, 169, 110, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
         header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-            letter-spacing: 0.5px;
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.9rem;
+            margin-bottom: 0.6rem;
+            font-weight: 400;
+            text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.3px;
+            position: relative;
         }
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            font-style: italic;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+
+        header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.92;
+            font-weight: 300;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.4px;
+            position: relative;
         }
+
+        header .author-line {
+            margin-top: 1.2rem;
+            font-size: 1rem;
+            opacity: 0.78;
+            font-weight: 300;
+            position: relative;
+        }
+
+        /* ── Layout ── */
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
+            max-width: 1020px;
+            margin: 2.5rem auto;
             padding: 0 2rem;
         }
+
         .content-box {
-            background: rgba(20, 15, 35, 0.85);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            border-left: 4px solid #b12a90;
-            backdrop-filter: blur(10px);
+            background: rgba(18, 24, 20, 0.88);
+            padding: 2.5rem 2.8rem;
+            margin-bottom: 2.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+            border-left: 4px solid #2d6a4f;
+            backdrop-filter: blur(8px);
         }
+
+        /* ── Typography ── */
         h2 {
-            color: #fb9062;
+            font-family: 'DM Serif Display', Georgia, serif;
+            color: #c9a96e;
             margin-bottom: 1.2rem;
-            font-size: 2rem;
-            border-bottom: 2px solid rgba(251, 144, 98, 0.3);
+            font-size: 1.9rem;
+            font-weight: 400;
+            border-bottom: 2px solid rgba(201, 169, 110, 0.25);
             padding-bottom: 0.7rem;
-            letter-spacing: 0.3px;
         }
+
         h3 {
-            color: #fbb862;
-            margin-bottom: 1rem;
+            font-family: 'DM Serif Display', Georgia, serif;
+            color: #7ec49d;
+            margin-bottom: 0.9rem;
             margin-top: 1.8rem;
-            font-size: 1.4rem;
-            letter-spacing: 0.2px;
+            font-size: 1.35rem;
+            font-weight: 400;
         }
+
+        p {
+            margin-bottom: 0.85rem;
+            color: #d0cdc5;
+        }
+
+        strong {
+            color: #e4cea2;
+            font-weight: 600;
+        }
+
+        em {
+            color: #c8c4bb;
+        }
+
+        a {
+            color: #c9a96e;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #e4cea2;
+            text-decoration: underline;
+        }
+
+        code {
+            background: rgba(45, 106, 79, 0.25);
+            padding: 0.25rem 0.45rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #7ec49d;
+            font-size: 0.88em;
+        }
+
+        /* ── Stats grid ── */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
             gap: 1.2rem;
-            margin: 1.8rem 0;
+            margin: 1.6rem 0;
         }
+
         .stat-card {
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.7) 0%, rgba(177, 42, 144, 0.5) 100%);
+            background: linear-gradient(145deg, rgba(27, 58, 42, 0.7), rgba(45, 106, 79, 0.35));
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 3px solid #fb9062;
-            transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-left: 3px solid #c9a96e;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
         }
+
         .stat-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(251, 144, 98, 0.4);
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.85) 0%, rgba(177, 42, 144, 0.65) 100%);
+            box-shadow: 0 6px 22px rgba(201, 169, 110, 0.3);
         }
+
         .stat-card .stat-number {
-            color: #fb9062;
+            color: #c9a96e;
+            font-family: 'DM Serif Display', Georgia, serif;
             font-size: 2.2rem;
-            font-weight: bold;
+            font-weight: 400;
             display: block;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            margin-bottom: 0.4rem;
         }
+
         .stat-card .stat-label {
-            color: #e8e8e8;
-            font-size: 0.95rem;
-            line-height: 1.4;
+            color: #c0bdb5;
+            font-size: 0.92rem;
+            line-height: 1.45;
         }
+
+        /* ── Highlight box ── */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(45, 106, 79, 0.2), rgba(201, 169, 110, 0.15));
+            border-left: 4px solid #c9a96e;
+            padding: 1.3rem 1.5rem;
+            margin: 1.4rem 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .placeholder {
+            color: #d4845a;
+            font-style: italic;
+        }
+
+        /* ── Lists ── */
         ul {
             margin-left: 1.5rem;
             margin-bottom: 1rem;
         }
+
         li {
-            margin-bottom: 0.7rem;
-            color: #d8d8d8;
+            margin-bottom: 0.65rem;
+            color: #c8c4bb;
         }
-        a {
-            color: #fb9062;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        a:hover {
-            color: #ffc48c;
-            text-decoration: underline;
-        }
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #b12a90 0%, #fb9062 100%);
-            color: white;
-            padding: 0.9rem 1.8rem;
-            border-radius: 6px;
-            margin: 0.5rem 0.5rem 0.5rem 0;
-            transition: all 0.3s;
-            box-shadow: 0 3px 10px rgba(177, 42, 144, 0.4);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(251, 144, 98, 0.6);
-            text-decoration: none;
-            background: linear-gradient(135deg, #d13aa0 0%, #ffa572 100%);
-        }
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(177, 42, 144, 0.25) 0%, rgba(251, 144, 98, 0.25) 100%);
-            border-left: 4px solid #fb9062;
-            padding: 1.3rem;
-            margin: 1.3rem 0;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
+
+        /* ── Map cards ── */
         .map-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            margin-top: 1.8rem;
+            margin-top: 1.6rem;
         }
+
         .map-card {
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.5) 0%, rgba(20, 15, 35, 0.9) 100%);
+            background: linear-gradient(145deg, rgba(27, 58, 42, 0.45), rgba(18, 24, 20, 0.9));
             padding: 1.8rem;
-            border-radius: 10px;
-            border: 1px solid rgba(177, 42, 144, 0.4);
+            border-radius: 8px;
+            border: 1px solid rgba(45, 106, 79, 0.4);
             transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
+
         .map-card:hover {
-            border-color: #fb9062;
-            box-shadow: 0 6px 20px rgba(251, 144, 98, 0.4);
+            border-color: #c9a96e;
+            box-shadow: 0 6px 22px rgba(201, 169, 110, 0.3);
             transform: translateY(-3px);
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.7) 0%, rgba(20, 15, 35, 0.95) 100%);
         }
+
         .map-card h4 {
-            color: #fb9062;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            letter-spacing: 0.3px;
+            font-family: 'DM Serif Display', Georgia, serif;
+            color: #c9a96e;
+            margin-bottom: 0.8rem;
+            font-size: 1.15rem;
+            font-weight: 400;
         }
+
         .map-card p {
-            color: #d8d8d8;
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
+            font-size: 0.93rem;
+            margin-bottom: 1.1rem;
             line-height: 1.5;
         }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d6a4f, #c9a96e);
+            color: #fff;
+            padding: 0.8rem 1.6rem;
+            border-radius: 5px;
+            margin: 0.4rem 0.4rem 0.4rem 0;
+            transition: all 0.3s;
+            box-shadow: 0 3px 12px rgba(45, 106, 79, 0.4);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 169, 110, 0.5);
+            text-decoration: none;
+            background: linear-gradient(135deg, #3d8a6a, #d4b97e);
+        }
+
+        /* ── Disease group table ── */
+        .disease-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.4rem 0;
+            font-size: 0.92rem;
+        }
+
+        .disease-table th {
+            text-align: left;
+            padding: 0.7rem 0.9rem;
+            background: rgba(45, 106, 79, 0.3);
+            color: #c9a96e;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(201, 169, 110, 0.25);
+        }
+
+        .disease-table td {
+            padding: 0.55rem 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #c0bdb5;
+        }
+
+        .disease-table tr:hover td {
+            background: rgba(45, 106, 79, 0.12);
+        }
+
+        .taxa-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .taxa-mosquito {
+            background: rgba(201, 169, 110, 0.2);
+            color: #c9a96e;
+        }
+
+        .taxa-tick {
+            background: rgba(45, 106, 79, 0.3);
+            color: #7ec49d;
+        }
+
+        /* ── Footer ── */
         footer {
             text-align: center;
-            padding: 2.5rem;
-            color: #999;
-            font-size: 0.9rem;
-            background: rgba(10, 10, 15, 0.9);
+            padding: 2.5rem 2rem;
+            color: #777;
+            font-size: 0.88rem;
+            background: rgba(10, 14, 12, 0.95);
             margin-top: 3rem;
-            border-top: 1px solid rgba(177, 42, 144, 0.3);
+            border-top: 1px solid rgba(45, 106, 79, 0.25);
         }
+
         footer p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            color: #777;
         }
-        code {
-            background: rgba(59, 15, 112, 0.4);
-            padding: 0.3rem 0.5rem;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            color: #fb9062;
-            font-size: 0.9em;
-        }
-        strong {
-            color: #ffc48c;
-            font-weight: 600;
-        }
-        p {
-            margin-bottom: 0.8rem;
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            header h1 { font-size: 2rem; }
+            header { padding: 3rem 1.2rem 2.5rem; }
+            .content-box { padding: 1.8rem 1.4rem; }
+            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1><em>Aedes aegypti</em> Suitability in Haiti</h1>
-        <p>Distribution modelling under baseline climate and warming scenarios</p>
+        <h1>Multi-Vector Risk in Georgia</h1>
+        <p class="subtitle">Species distribution modelling, social vulnerability and risk assessment</p>
+        <p class="author-line">Pshea-Smith <em>et al.</em> &mdash; University of Florida</p>
     </header>
 
     <div class="container">
+
+        <!-- ── Overview ── -->
         <div class="content-box">
             <h2>Project Overview</h2>
             <p>
-                This project models the distribution of <em>Aedes aegypti</em> in Haiti under baseline climate conditions and projects suitability under warming scenarios of +1.5°C, +2°C, +3°C, and +4°C.
-                The goal is to provide spatially explicit estimates that can support vector control prioritisation and broader public health planning.
-            </p>
-            <p>
-                <em>Aedes aegypti</em> is an important vector of dengue, Zika, and chikungunya viruses, which have all been of public health importance in Haiti.
+                This project models the distributions of 16 mosquito and tick species of public health relevance in the country of Georgia (Caucasus region).
+                Species-level suitability predictions are integrated into weighted composite disease exposure indices for eight pathogen&ndash;vector groups, then combined with a social vulnerability index to produce municipality-level risk assessments following an INFORM-parallel framework.
             </p>
 
             <div class="highlight-box">
                 <strong>Key finding:</strong>
-                At baseline, 25.9% of Haiti’s landscape exceeded our computed 10th percentile training presence threshold (0.552), corresponding to an estimated 3,956,000 people (about 21% of the population) living in areas at or above this threshold.
-                Under +4°C of warming, more than 85% of Haiti’s population is projected to be in areas at or above 0.552 probability of presence.
+                <span class="placeholder">[Placeholder &mdash; insert key summary finding once results are finalised, e.g. &ldquo;Southeastern municipalities including Gori, Sagarejo, and Axalcixe had the highest overall risk index values at baseline, driven by broad tick-borne pathogen vector suitability and elevated social vulnerability.&rdquo;]</span>
             </div>
         </div>
 
+        <!-- ── Key Results ── -->
         <div class="content-box">
             <h2>Key Results</h2>
 
-            <h3>Baseline suitability and population exposure</h3>
+            <h3>Species distribution models</h3>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <span class="stat-number">25.9%</span>
-                    <span class="stat-label">of Haiti’s landscape at or above the 10th percentile training presence threshold at baseline</span>
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">mosquito and tick species modelled across 100 pseudo-absence iterations</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">3.96M</span>
-                    <span class="stat-label">people estimated to live at or above the threshold at baseline</span>
+                    <span class="stat-number">0.84&ndash;1.00</span>
+                    <span class="stat-label">mean AUC range across species, indicating high model discrimination</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">pathogen&ndash;vector disease groups assessed, from Lyme borreliosis to emerging arboviruses</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">~69</span>
+                    <span class="stat-label">municipalities evaluated for risk, excluding regions with no census data</span>
                 </div>
             </div>
 
-            <h3>Warming level projections</h3>
+            <h3>Risk index</h3>
             <p>
-                Future suitability was projected under +1.5°C, +2°C, +3°C, and +4°C warming scenarios using screened CMIP6 global climate models.
-                Across warming levels, suitability increased consistently, with strong expansion in the share of the population living in areas above the baseline threshold.
+                Risk was highest in the southeastern lowlands, with Gori (4.71&thinsp;&plusmn;&thinsp;0.23), Sagarejo (4.29&thinsp;&plusmn;&thinsp;0.59), and Axalcixe (4.11&thinsp;&plusmn;&thinsp;0.15) ranking as the top three municipalities at baseline.
+                Tbilisi had the lowest social vulnerability in the country, resulting in a low composite risk score (0.71&thinsp;&plusmn;&thinsp;0.05) despite moderate hazard.
+            </p>
+            <p class="placeholder">
+                [Placeholder &mdash; update with final warming-level results, population exposure estimates, and seasonal shift summaries when available.]
             </p>
 
-            <h3>Spatial patterns of risk</h3>
+            <h3>Phenological shifts under warming</h3>
             <p>
-                Risk is not determined by suitability alone.
-                Areas with high suitability, high population density and high deprivation are expected to represent the highest priority for control, including the Port-au-Prince metropolitan area.
+                Spotted fever rickettsioses vectors exhibited the broadest baseline surveillance window (March&ndash;November), while emerging <em>Aedes</em>-borne virus vectors showed the most pronounced phenological shifts, with season onset advancing by approximately 2.8 months under +3&thinsp;&deg;C of warming.
             </p>
         </div>
 
+        <!-- ── Disease Groups ── -->
         <div class="content-box">
-            <h2>About the Modeling Approach</h2>
+            <h2>Pathogen&ndash;Vector Groups</h2>
             <p>
-                We used ensemble boosted regression tree models trained with 60 presence locations from the VectorMap database and 19 WorldClim bioclimatic variables at approximately 1 km resolution.
-                Pseudo-absence points were generated in a 1:1 ratio with presences, with locations constrained to at least 717 meters away from the nearest presence location.
-                Thirty replicates were generated to support an ensemble prediction and to characterise uncertainty across models.
+                Sixteen species were assigned to eight disease groups based on published vector competence evidence, regional seroprevalence data, and molecular detection rates. Contribution weights were derived from the literature and tested via sensitivity analysis.
+            </p>
+
+            <table class="disease-table">
+                <thead>
+                    <tr>
+                        <th>Disease Group</th>
+                        <th>Taxa</th>
+                        <th>Contributing Species</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Emerging <em>Aedes</em>-borne Viruses</td>
+                        <td><span class="taxa-tag taxa-mosquito">Mosquito</span></td>
+                        <td><em>Ae.&nbsp;albopictus</em>, <em>Ae.&nbsp;vexans</em>, <em>Ae.&nbsp;caspius</em></td>
+                    </tr>
+                    <tr>
+                        <td>West Nile Virus Complex</td>
+                        <td><span class="taxa-tag taxa-mosquito">Mosquito</span></td>
+                        <td><em>Cx.&nbsp;pipiens</em>, <em>Cx.&nbsp;theileri</em>, <em>Ae.&nbsp;vexans</em></td>
+                    </tr>
+                    <tr>
+                        <td>Tick-borne Encephalitis</td>
+                        <td><span class="taxa-tag taxa-tick">Tick</span></td>
+                        <td><em>I.&nbsp;ricinus</em>, <em>D.&nbsp;reticulatus</em>, <em>Ha.&nbsp;inermis</em></td>
+                    </tr>
+                    <tr>
+                        <td>Lyme Borreliosis</td>
+                        <td><span class="taxa-tag taxa-tick">Tick</span></td>
+                        <td><em>I.&nbsp;ricinus</em></td>
+                    </tr>
+                    <tr>
+                        <td>Spotted Fever Rickettsioses</td>
+                        <td><span class="taxa-tag taxa-tick">Tick</span></td>
+                        <td><em>D.&nbsp;marginatus</em>, <em>D.&nbsp;reticulatus</em>, <em>Rh.&nbsp;sanguineus</em>, <em>Hy.&nbsp;marginatum</em></td>
+                    </tr>
+                    <tr>
+                        <td>Crimean-Congo Haemorrhagic Fever</td>
+                        <td><span class="taxa-tag taxa-tick">Tick</span></td>
+                        <td><em>Hy.&nbsp;marginatum</em></td>
+                    </tr>
+                    <tr>
+                        <td>Tularaemia</td>
+                        <td><span class="taxa-tag taxa-tick">Tick</span></td>
+                        <td><em>D.&nbsp;marginatus</em>, <em>D.&nbsp;reticulatus</em>, <em>I.&nbsp;ricinus</em></td>
+                    </tr>
+                    <tr>
+                        <td class="placeholder">[Malaria &mdash; if included]</td>
+                        <td><span class="taxa-tag taxa-mosquito">Mosquito</span></td>
+                        <td class="placeholder"><em>[An.&nbsp;claviger, etc.]</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── Methods ── -->
+        <div class="content-box">
+            <h2>Modelling Approach</h2>
+            <p>
+                Species distribution models were constructed using a three-tier framework scaled by sample size: standard boosted regression trees (BRTs) for species with &gt;100 presence records, conservatively tuned BRTs for species with 50&ndash;100 records (tree complexity&thinsp;=&thinsp;1, 5-fold CV, bag fraction&thinsp;=&thinsp;0.5), and ensemble of small models (ESMs) via <code>ecospat</code>/<code>biomod2</code> for rare species with &lt;50 records.
+                Each BRT tier used 100 pseudo-absence iterations with month-matched covariate extraction via <code>dynamicSDM</code>.
             </p>
             <p>
-                Model performance was high (mean AUC = 0.87), and temperature-related variables showed the highest relative influence.
+                Baseline predictions used CHELSA climatologies. Future projections were computed across three CMIP6 global climate models (GFDL-ESM4, MPI-ESM1, UKESM1) using a delta-change methodology, under SSP3-7.0 and SSP5-8.5 pathways summarised at global warming levels of +1.5&thinsp;&deg;C, +2&thinsp;&deg;C, and +3&thinsp;&deg;C.
+            </p>
+            <p>
+                Disease exposure indices were constructed using a continuous suitability approach (<code>E&thinsp;=&thinsp;&Sigma;&thinsp;w<sub>i</sub>&thinsp;&times;&thinsp;suit<sub>i</sub></code>) with uncertainty propagated via 1,000 Monte Carlo iterations.
+                Social vulnerability was computed from six Georgian census indicators and integrated with the hazard score via an epsilon-adjusted geometric mean.
             </p>
         </div>
 
+        <!-- ── Data Sources ── -->
         <div class="content-box">
             <h2>Data Sources</h2>
             <ul>
-                <li><strong>Mosquito occurrences:</strong> VectorMap presence locations</li>
-                <li><strong>Climate data:</strong> WorldClim 2.1 bioclimatic variables</li>
-                <li><strong>Future climate:</strong> screened CMIP6 global climate models summarised by warming levels</li>
-                <li><strong>Population:</strong> WorldPop gridded population estimates</li>
-                <li><strong>Humanitarian deprivation:</strong> United Nations Joint Intersectoral Analysis Framework (JIAF v2) humanitarian needs estimates (2025)</li>
+                <li><strong>Vector occurrences:</strong> VectorMap database (accessed March 2025) and bespoke field collections</li>
+                <li><strong>Climate data:</strong> CHELSA v2.1 bioclimatic variables (baseline); CHELSA-CMIP6 projections (future)</li>
+                <li><strong>Social vulnerability:</strong> Georgian National Statistics Office census data (<a href="https://regions.geostat.ge" target="_blank">regions.geostat.ge</a>)</li>
+                <li><strong>Administrative boundaries:</strong> <code>geodata::gadm()</code> ADM2 for Georgia</li>
+                <li><strong>Spatial analysis tools:</strong> R v4.5.1 with <code>terra</code>, <code>sf</code>, <code>exactextractr</code>, <code>dismo</code>, <code>ecospat</code>, <code>biomod2</code></li>
             </ul>
         </div>
 
+        <!-- ── Interactive Maps ── -->
         <div class="content-box">
             <h2>Interactive Maps</h2>
             <p>
-                The maps below are hosted as HTML Leaflet widgets. They support zooming, panning, and layer controls.
-                The HTMLs are also downloadable from the github repository.
+                The maps below are hosted as HTML Leaflet widgets with GeoJSON overlays. They support zooming, panning, layer controls, and dropdown scenario selection.
+                All HTMLs are also downloadable from the repository.
             </p>
 
             <div class="map-grid">
                 <div class="map-card">
-                    <h4>Baseline suitability predictions</h4>
+                    <h4>Species suitability predictions</h4>
                     <p>
-                        Explore baseline predicted suitability for <em>Aedes aegypti</em> and related uncertainty layers derived from the ensemble.
+                        Explore baseline and warming-scenario predictions for all 16 modelled vector species, with dropdown selection by species and scenario.
                     </p>
-                    <a href="Haiti_Aeae_Preds.html" class="btn" target="_blank">View map</a>
+                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
                 </div>
 
                 <div class="map-card">
-                    <h4>Commune summaries</h4>
+                    <h4>Disease exposure indices</h4>
                     <p>
-                        View commune-level summaries of predicted suitability to support comparisons across administrative units.
+                        Municipality-level composite exposure indices for each of the eight pathogen&ndash;vector groups under baseline and warming conditions.
                     </p>
-                    <a href="Haiti_Communes_Map.html" class="btn" target="_blank">View map</a>
+                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
                 </div>
 
                 <div class="map-card">
-                    <h4>Risk index map</h4>
+                    <h4>Social vulnerability</h4>
                     <p>
-                        Explore an integrated risk representation that relates predicted suitability to human population exposure and deprivation metrics.
+                        Census-derived social vulnerability index scores by municipality, highlighting geographic patterns in healthcare capacity and population structure.
                     </p>
-                    <a href="Haiti_Risk_Map.html" class="btn" target="_blank">View map</a>
+                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
+                </div>
+
+                <div class="map-card">
+                    <h4>Risk index</h4>
+                    <p>
+                        Integrated INFORM-parallel risk representation combining vector-driven disease hazard with social vulnerability at the municipality level.
+                    </p>
+                    <a href="#" class="btn">View map <span class="placeholder">[link TBD]</span></a>
                 </div>
             </div>
         </div>
 
+        <!-- ── Supplementary Files ── -->
+        <div class="content-box">
+            <h2>Supplementary Files</h2>
+            <p>
+                Complete model outputs, raw data, and supplementary analyses are available via the linked repository and as supplementary files accompanying the manuscript.
+            </p>
+            <ul>
+                <li><strong>Supplemental File 1:</strong> Cleaned vector occurrence data</li>
+                <li><strong>Supplemental File 3:</strong> Social vulnerability index components and composite scores</li>
+                <li><strong>Supplemental File 5:</strong> Species-specific maxSSS thresholds</li>
+                <li><strong>Supplemental File 8:</strong> Individual model fit statistics (1,600 models)</li>
+                <li><strong>Supplemental File 9:</strong> Municipality-level risk index values across all scenarios</li>
+            </ul>
+            <p class="placeholder">[Placeholder &mdash; add repository link and DOI once finalised.]</p>
+        </div>
+
+        <!-- ── Public Health ── -->
         <div class="content-box">
             <h2>Public Health Implications</h2>
             <p>
-                Describing vector distributions is a foundational public health activity.
-                In Haiti, this is especially important given resource constraints and the likelihood of substantial changes in suitability under climate change.
+                Multi-taxon descriptions of vector ecology remain uncommon despite vector control being routinely performed across taxa by the same public health personnel.
+                Integrating mosquito and tick distributions with social vulnerability data provides a more holistic basis for resource allocation than single-species or single-pathogen assessments alone.
             </p>
             <p>
-                The projected expansion of suitability under warming highlights a global health equity challenge.
-                These outputs provide spatially explicit estimates that can support prioritisation and planning, while also clarifying where uncertainty remains.
+                The projected expansion of suitable habitat under warming, combined with phenological shifts that may extend transmission windows by several months for some disease groups, underscores the importance of forward-looking surveillance planning.
+                These outputs provide spatially explicit, municipality-level estimates designed to support prioritisation while transparently communicating uncertainty.
+            </p>
+            <p class="placeholder">
+                [Placeholder &mdash; refine with final discussion points once the manuscript is complete.]
             </p>
         </div>
+
     </div>
 
     <footer>
-        <p><em>Aedes aegypti</em> distribution modelling in Haiti</p>
-        <p>Please contact <em>ianpsheasmith@ufl.edu</em> with any questions.</p>
-        <p>Hosted via GitHub Pages</p>
+        <p>Multi-vector disease risk modelling in the Republic of Georgia</p>
+        <p>Contact: <em>ianpsheasmith@ufl.edu</em></p>
+        <p>Hosted via GitHub Pages &mdash; <span class="placeholder">[repository link TBD]</span></p>
     </footer>
+
 </body>
 </html>
