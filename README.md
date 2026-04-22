@@ -11,7 +11,7 @@ An interactive landing page summarising the project, with embedded maps and figu
 
 ## Project summary
 
-The project models the habitat suitability of sixteen mosquito and tick species of public health relevance across the country of Georgia (Caucasus region), using boosted regression trees (BRTs) and ensembles of small models (ESMs) scaled by sample size. Species-level suitability predictions are combined into weighted exposure indices for eight pathogen–vector groups, and then integrated with a census-derived social vulnerability index (SVI) to produce a municipality-level risk surface following an INFORM-parallel framework. Outputs are summarised at the scale of Georgia's 64 administrative municipalities (*rayonii*).
+The project models the habitat suitability of sixteen mosquito and tick species of public health relevance across the country of Georgia (Caucasus region), using boosted regression trees (BRTs) and ensembles of small models (ESMs) scaled by sample size. Species-level suitability predictions are combined into weighted exposure indices for eight pathogen–vector groups, and then integrated with a census-derived social vulnerability index (SVI) to produce a municipality-level risk surface following an INFORM-parallel framework. Outputs are summarised at the scale of Georgia's 64 administrative municipalities.
 
 ---
 
