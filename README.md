@@ -23,7 +23,7 @@ The project models the habitat suitability of sixteen mosquito and tick species 
 | `Data_and_Code/RCode.Rmd` | R Markdown pipeline covering covariate preparation, species distribution modelling, social vulnerability index construction, Monte Carlo risk aggregation, and figure/map generation. |
 | `Data_and_Code/Species_Occurrence_Points.csv` | Cleaned, deduplicated geo-referenced occurrence records for the sixteen modelled vector species. Source records were compiled from VectorMap, the Global Biodiversity Information Facility (GBIF) and a previously published regional tick dataset. |
 | `Data_and_Code/Municipality_Data.csv` | Municipality-level covariates and indicators used in the social vulnerability index, aggregated from the Georgian National Statistics Office (regions.geostat.ge) and harmonised to the 64-municipality taxonomy. |
-| `Figures/` | Publication-quality figures (TIFF) and web-optimised PNG duplicates. Includes three interactive Leaflet maps (`Fig1.html`, `Fig3.html`, `Fig5.html`) corresponding to the occurrence, social vulnerability and risk figures in the manuscript. |
+| `Figures/` | Figures associated with the manuscript. Includes three interactive Leaflet maps (`Fig1.html`, `Fig3.html`, `Fig5.html`) corresponding to the occurrence, social vulnerability and risk figures in the manuscript. |
 
 ---
 
