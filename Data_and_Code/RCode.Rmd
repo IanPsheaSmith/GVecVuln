@@ -728,7 +728,7 @@ REPLACE PATH WITH A LOCAL OR OTHERWISE SPECIFIED PATH
   
   # Initialise the leaflet map and add species layers via purrr::reduce()
     occurence_int_map <- leaflet() |>
-      addProviderTiles(providers$CartoDB.Positron)
+      addProviderTiles(providers$Esri.WorldGrayCanvas)
   
     occurence_int_map <- purrr::reduce(
       species_list,
@@ -1047,7 +1047,7 @@ REPLACE PATH WITH A LOCAL OR OTHERWISE SPECIFIED PATH
           )
       },
       .init = leaflet() |>
-        addProviderTiles(providers$CartoDB.Positron)
+        addProviderTiles(providers$Esri.WorldGrayCanvas)
     )
 
   # Add layer controls with italicised species labels via JS DOM manipulation
@@ -6308,7 +6308,7 @@ REPLACE YOUR DESIRED OUTPUT DIRECTORY
 
   # Build interactive leaflet map
     svi_interactive_map <- leaflet(georgia_map_interactive) |>
-        addProviderTiles(providers$CartoDB.Positron) |>
+        addProviderTiles(providers$Esri.WorldGrayCanvas) |>
           addPolygons(
               data = georgia_admin0,
               fillColor = "grey90",
@@ -7218,7 +7218,7 @@ REPLACE YOUR DESIRED OUTPUT DIRECTORY
   # BUILD LEAFLET MAP
   
   inform_map <- leaflet(map_sf) |>
-      addProviderTiles(providers$CartoDB.Positron) |>
+      addProviderTiles(providers$Esri.WorldGrayCanvas) |>
       addPolygons(
           data        = georgia_admin0,
           fillColor   = "grey90",
